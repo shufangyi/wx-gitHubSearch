@@ -1,0 +1,39 @@
+<!-- components/repoItem/index.wxml -->
+<!-- name	:	vue
+		
+nameWithOwner	:	vuejs/vue
+		
+projectsUrl	:	https://github.com/vuejs/vue/projects
+		
+createdAt	:	2013-07-29T03:24:51Z
+		
+updatedAt	:	2018-08-27T10:17:02Z
+		
+description	:	🖖 A progressive, incrementally-adoptable JavaScript framework for building UI on the web.
+		
+forkCount	:	15725
+		
+	licenseInfo		{1}
+		
+name	:	MIT License
+		
+	owner		{1}
+		
+avatarUrl	:	https://avatars1.githubusercontent.com/u/6128107?v=4 -->
+<view class="repoItem">
+  <image lazy-load="{{true}}" src="{{repoItem.owner.avatarUrl}}" class="repo_avatar" />
+  <view class="repo_desc">
+    <view class="">
+      <text class="">project name:</text>
+      <text class="">{{repoItem.name}}</text>
+    </view>
+    <view class="">
+      <text class="">project owner:</text>
+      <text class="">{{repoItem.nameWithOwner}}</text>
+    </view>
+    <view class="">
+      <text class="">project description:</text>
+      <text class="">{{repoItem.description}}</text>
+    </view>
+  </view>
+</view>

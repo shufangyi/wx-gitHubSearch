@@ -1,0 +1,37 @@
+{
+  "pages": ["pages/rank/index", "pages/search/index", "pages/user/index"],
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTitleText": "喵喵喵～",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default",
+    "backgroundColor": "#ffffff",
+    "backgroundColorTop": "#ffffff",
+    "backgroundColorBottom": "#ffffff",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "selectedColor": "#1aad19",
+    "list": [
+      {
+        "text": "rank",
+        "iconPath": "/images/ranking.png",
+        "selectedIconPath": "/images/ranking@active.png",
+        "pagePath": "pages/rank/index"
+      },
+      {
+        "text": "search",
+        "iconPath": "/images/search.png",
+        "selectedIconPath": "/images/search@active.png",
+        "pagePath": "pages/search/index"
+      },
+      {
+        "text": "user",
+        "iconPath": "/images/user.png",
+        "selectedIconPath": "/images/user@active.png",
+        "pagePath": "pages/user/index"
+      }
+    ]
+  }
+}
