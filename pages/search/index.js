@@ -7,8 +7,8 @@ Page({
    */
   data: {
     query: 'vue',
-    pageSize: 10,
-    repoList: [],
+    pageSize: 8,
+    repoList: null,
     /* 
      * endCursor:"Y3Vyc29yOjEw"
      * hasNextPage:true
@@ -16,7 +16,8 @@ Page({
      * startCursor:"Y3Vyc29yOjE=" 
      */
     pageInfo: null,
-    loading: true,
+    loading: false,
+    loadingMore:false,
     input_focus: false
   },
 
@@ -65,12 +66,35 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {},
+  onPullDownRefresh: function(event) {
+    console.log('asdf',event)
+  },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {},
+  onReachBottom: function(event) {
+    if (this.data.loadingMore || !this.data.pageInfo.hasNextPage) {
+      return
+    }
+    this.setData({
+      loadingMore: true
+    })
+    $gql(
+      serachRepo({
+        query: this.data.query,
+        first: this.data.pageSize,
+        after: this.data.pageInfo.endCursor
+      })
+    ).then(res => {
+      const search = res.data.search
+      this.setData({
+        repoList: this.data.repoList ? this.data.repoList.concat(search.nodes) : search.nodes,
+        pageInfo: search.pageInfo,
+        loadingMore: false
+      })
+    })
+  },
 
   /**
    * 用户点击右上角分享

@@ -1,12 +1,22 @@
 <!-- pages/home/index.wxml -->
+<v-header></v-header>
 <view class="search_container">
-  <input adjust-position="{{true}}" value="{{query}}" class=" {{ input_focus ? 'query_input_focus' : 'query_input'}}" confirm-type="search" placeholder="输入关键字搜索" placeholder-class="query_input_placeholder" bindfocus="onFocus" bindblur="onBluer" bindconfirm="onConfirm" />
+  <view class="search_head">
+    <input adjust-position="{{true}}" value="{{query}}" class="query_input {{ input_focus ? 'query_input_focus' : ''}}" confirm-type="search" placeholder="输入关键字搜索" placeholder-class="query_input_placeholder" bindfocus="onFocus" bindblur="onBluer" bindconfirm="onConfirm" />
+  </view>
   <view class="main_body">
-    <view wx:if="{{loading}}" class="result_loading">
+    <view wx:if="{{loading && !repoList}}" class="result_loading">
       <view class="scroll_pixel"></view>
     </view>
     <view wx:else class="result_wrapper">
       <v-repo wx:for="{{repoList}}" repoItem="{{item}}" wx:key="{{item.projectsUr}}" class="result_item"></v-repo>
+    </view>
+  </view>
+  <view wx:if="{{loadingMore}}" class="loadingTip">
+    <view class="looping-rhombuses-spinner">
+      <view class="rhombus"></view>
+      <view class="rhombus"></view>
+      <view class="rhombus"></view>
     </view>
   </view>
 </view>

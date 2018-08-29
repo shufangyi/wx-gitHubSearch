@@ -20,13 +20,30 @@ const query = graphql`
         ... on Repository {
           name
           nameWithOwner
-          projectsUrl
+          url
           createdAt
           updatedAt
           description
           forkCount
+          stargazers(first: 1) {
+            totalCount
+          }
+          primaryLanguage {
+            name
+            color
+          }
           licenseInfo {
             name
+          }
+          repositoryTopics(first: 5) {
+            nodes {
+              ... on RepositoryTopic {
+                url
+                topic {
+                  name
+                }
+              }
+            }
           }
           owner {
             avatarUrl

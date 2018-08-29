@@ -1,7 +1,6 @@
 const cfg = require('../config')
 
 const instance = function({ url, method, data, header }) {
-  console.log(method)
   return new Promise((resolve, reject) => {
     wx.request({
       url: url,

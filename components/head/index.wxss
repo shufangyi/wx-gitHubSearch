@@ -1,0 +1,16 @@
+/* components/head/index.wxss */
+.header_wrapper {
+  height:120rpx;
+  width:100%;
+  background-color:white;
+  z-index:99;
+  position:fixed;
+  top:0;
+  left:0;
+  padding-top:30rpx;
+}
+
+image {
+  width:90rpx;
+  height:90rpx;
+}

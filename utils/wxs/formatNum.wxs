@@ -1,0 +1,9 @@
+module.exports.formatNumber = function (number) {
+  if (number <= 999) {
+    return number
+  } else if (number > 999 && number<= 999999) {
+return Math.floor(number/1000) + 'k'
+    } else {
+      return Math.floor(number/1000000) + 'm'
+    }
+}

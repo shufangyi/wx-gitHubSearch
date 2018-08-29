@@ -1,0 +1,5 @@
+<!--components/head/index.wxml-->
+<view class="header_wrapper">
+  header
+  <image src="/images/github_2.png" />
+</view>

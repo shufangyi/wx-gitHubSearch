@@ -1,0 +1,30 @@
+module.exports.formatTimefun = function (str) {
+  if (str) {
+    var now = Date.now()
+    var time = Date.parse(str)
+    var delta = Math.floor((now - time) / 1000)
+    if (delta < 60) {
+      return 'Updated less than 1 min ago'
+    } 
+    else {
+      var mins = Math.floor(delta / 60)
+      if (mins < 60) {
+        return 'Updated ' + mins + ' mins ago'
+      } else {
+        var hours = Math.floor(mins / 60)
+        if (hours < 24) {
+          return 'Updated ' + hours + ' hours ago'
+        } else {
+          var days = Math.floor(hours / 24)
+          if (days < 7) {
+            return 'Updated ' + days + ' days ago'
+          } else {
+            var d = getDate(time)
+            return 'Updated on ' + [d.getFullYear(), d.getMonth()+1, d.getDate()].join('.')
+          }
+        }
+      }
+    }
+  }
+  return ""
+}

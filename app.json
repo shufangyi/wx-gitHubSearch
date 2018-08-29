@@ -2,9 +2,9 @@
   "pages": ["pages/rank/index", "pages/search/index", "pages/user/index"],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
-    "navigationBarTitleText": "喵喵喵～",
     "navigationBarTextStyle": "black",
-    "navigationStyle": "default",
+    "navigationBarTitleText": "喵喵喵～",
+    "navigationStyle": "custom",
     "backgroundColor": "#ffffff",
     "backgroundColorTop": "#ffffff",
     "backgroundColorBottom": "#ffffff",
