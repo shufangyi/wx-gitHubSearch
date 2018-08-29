@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    query: 'vue',
+    query: '',
     pageSize: 8,
     repoList: null,
     /* 
@@ -17,31 +17,14 @@ Page({
      */
     pageInfo: null,
     loading: false,
-    loadingMore:false,
+    loadingMore: false,
     input_focus: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    this.setData({
-      loading: true
-    })
-    $gql(
-      serachRepo({
-        query: this.data.query,
-        first: this.data.pageSize
-      })
-    ).then(res => {
-      const search = res.data.search
-      this.setData({
-        repoList: search.nodes,
-        pageInfo: search.pageInfo,
-        loading: false
-      })
-    })
-  },
+  onLoad: function(options) {},
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -67,7 +50,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function(event) {
-    console.log('asdf',event)
+    console.log('asdf', event)
   },
 
   /**
@@ -89,7 +72,9 @@ Page({
     ).then(res => {
       const search = res.data.search
       this.setData({
-        repoList: this.data.repoList ? this.data.repoList.concat(search.nodes) : search.nodes,
+        repoList: this.data.repoList
+          ? this.data.repoList.concat(search.nodes)
+          : search.nodes,
         pageInfo: search.pageInfo,
         loadingMore: false
       })
@@ -100,6 +85,28 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function() {},
+  searchByKeyword() {
+    if (!this.data.query) {
+      return
+    }
+    this.setData({
+      loading: true,
+      repoList: null
+    })
+    $gql(
+      serachRepo({
+        query: this.data.query,
+        first: this.data.pageSize
+      })
+    ).then(res => {
+      const search = res.data.search
+      this.setData({
+        repoList: search.nodes,
+        pageInfo: search.pageInfo,
+        loading: false
+      })
+    })
+  },
   onFocus(event) {
     this.setData({
       input_focus: true
@@ -112,5 +119,9 @@ Page({
   },
   onConfirm(event) {
     console.log(event)
+    this.setData({
+      query: event.detail.value
+    })
+    this.searchByKeyword()
   }
 })

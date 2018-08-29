@@ -4,10 +4,10 @@ view {
 }
 text {
   font-size: 30rpx;
-  line-height:30rpx;
+  line-height: 30rpx;
 }
-.inlineBlock  {
-  display:inline-block;
+.inlineBlock {
+  display: inline-block;
 }
 .repoItem {
   display: flex;
@@ -19,7 +19,7 @@ text {
 .repo_name {
   display: flex;
   justify-content: space-between;
-  align-items:center;
+  align-items: center;
 }
 
 .repo_name .repo_avatar {
@@ -34,82 +34,81 @@ text {
 .repo_name .repo_detail {
   flex-grow: 1;
   display: flex;
-  flex-direction:column;
-  justify-content:center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .repo_name .repo_detail .repo_project_name {
-  color:#0366d6;
+  color: #0366d6;
   font-size: 36rpx;
-  line-height:40rpx;
-  font-weight:700;
+  line-height: 40rpx;
+  font-weight: 700;
 }
 
-.repo_name .repo_detail  .repo_mainLag {
-  color:#586069;
-line-height:36rpx
+.repo_name .repo_detail .repo_mainLag {
+  color: #586069;
+  line-height: 36rpx;
 }
 
 .repo_name .repo_detail .circle_label {
-  width:30rpx;
-  height:30rpx;
-  border-radius:50%;
-  position:relative;
-  top:4rpx;
-  margin-right:10rpx;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+  position: relative;
+  top: 4rpx;
+  margin-right: 10rpx;
 }
 
 .repo_name .repo_stars {
   flex-shrink: 0;
   flex-grow: 0;
-  min-width:120rpx;
-  text-align:right;
+  min-width: 120rpx;
+  text-align: right;
   margin-left: 20rpx;
 }
 
 .repo_name .repo_stars .star_img {
-  width:20rpx;
-  height:20rpx;
+  width: 20rpx;
+  height: 20rpx;
 }
 
 .repo_name .repo_stars .repo_star_btn {
-  width:100rpx;
-height:40rpx;
-padding:0 5rpx;
-font-size:30rpx;
-line-height:40rpx;
-
+  width: 100rpx;
+  height: 40rpx;
+  padding: 0 5rpx;
+  font-size: 30rpx;
+  line-height: 40rpx;
 }
 
 .repo_desc {
-  margin:20rpx 0 0 0;
+  margin: 20rpx 0 0 0;
 }
 .repo_desc text {
   color: #586059;
-  font-size:30rpx;
-  line-height:34rpx;
+  font-size: 30rpx;
+  line-height: 34rpx;
 }
 .repo_topic {
 }
 
 .repo_topic .topic_item {
   display: inline-block;
-  background-color:#f1f8ff;
-  color:#0366d6;
+  background-color: #f1f8ff;
+  color: #0366d6;
   padding: 4rpx 10rpx;
-  font-size:28rpx;
-  line-height:36rpx;
-  margin-top:20rpx;
-  margin-right:20rpx;
+  font-size: 28rpx;
+  line-height: 36rpx;
+  margin-top: 20rpx;
+  margin-right: 20rpx;
 }
 .repo_other_info {
-  margin-top:20rpx;
+  margin-top: 20rpx;
 }
 
 .repo_other_info text {
   color: #586059;
-  font-size:30rpx;
-  line-height:34rpx;
+  font-size: 30rpx;
+  line-height: 34rpx;
 }
 
 .repo_other_info .license {

@@ -6,7 +6,7 @@
       return ''
     }
     if (license === 'GNU General Public License v2.0') {
-      return 'GPL-2.0 license'
+      return 'GPL-2.0 License'
     } else {
       return license
     }
@@ -18,25 +18,29 @@
     <image lazy-load="{{true}}" src="{{repoItem.owner.avatarUrl}}" class="repo_avatar" />
     <view class="repo_detail">
       <text class="repo_project_name">{{repoItem.nameWithOwner}}</text>
-      <view >
+      <view>
         <text class="circle_label inlineBlock" style="background-color:{{repoItem.primaryLanguage.color}}"></text>
         <text class="repo_mainLag">{{repoItem.primaryLanguage.name}}</text>
       </view>
     </view>
     <view class="repo_stars">
-        <image src="/images/star.png" class="star_img inlineBlock" />
-        <text class="inlineBlock">{{ formatNum.formatNumber(repoItem.stargazers.totalCount) }}</text>
-        <!-- <button class="repo_star_btn">STAR</button> -->
+      <image src="/images/star.png" class="star_img inlineBlock" />
+      <text class="inlineBlock">{{ formatNum.formatNumber(repoItem.stargazers.totalCount) }}</text>
+      <!-- <button class="repo_star_btn">STAR</button> -->
     </view>
   </view>
   <view class="repo_desc" wx:if="{{repoItem.description}}">
     <text class="">{{repoItem.description}}</text>
   </view>
   <view class="repo_topic" wx:if="{{repoItem.repositoryTopics.nodes.length}}">
-    <text class="topic_item" wx:for="{{repoItem.repositoryTopics.nodes}}" wx:key="repoItem.nameWithOwner + item.topic.name">{{item.topic.name}}</text>
+    <text class="topic_item" wx:for="{{repoItem.repositoryTopics.nodes}}" wx:key="repoItem.nameWithOwner + item.topic.name">
+      {{item.topic.name}}
+    </text>
   </view>
   <view class="repo_other_info">
-    <text class="license" wx:if="{{repoItem.licenseInfo.name}}">{{license.formatLicense(repoItem.licenseInfo.name)}}</text>
+    <text class="license" wx:if="{{repoItem.licenseInfo.name}}">
+      {{license.formatLicense(repoItem.licenseInfo.name)}}
+    </text>
     <text class="update_time">{{formatTime.formatTimefun(repoItem.updatedAt)}}</text>
   </view>
 </view>
