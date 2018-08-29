@@ -87,6 +87,11 @@ Page({
   onShareAppMessage: function() {},
   searchByKeyword() {
     if (!this.data.query) {
+      wx.showToast({
+        title: '输入有误！',
+        duration: 2000,
+        icon: 'none'
+      })
       return
     }
     this.setData({
@@ -117,8 +122,12 @@ Page({
       input_focus: false
     })
   },
+  onInput(event) {
+    this.setData({
+      query: event.detail.value
+    })
+  },
   onConfirm(event) {
-    console.log(event)
     this.setData({
       query: event.detail.value
     })
