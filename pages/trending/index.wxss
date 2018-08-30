@@ -1,0 +1,128 @@
+/* pages/rank/index.wxss */
+view {
+  box-sizing: border-box;
+}
+
+text {
+  font-size: 30rpx;
+  line-height: 32rpx;
+  color: rgb(88, 96, 105);
+}
+.filter_bar {
+  padding-top: 40rpx;
+  height: 120rpx;
+  border-bottom: 1rpx solid #d1d5da;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.filter_bar text {
+  box-sizing: border-box;
+  height: 79rpx;
+  line-height: 78rpx;
+  border-radius: 8rpx 8rpx 0 0;
+  padding: 0 20rpx;
+}
+.filter_bar text.active {
+  border: 1rpx solid #d1d5da;
+  border-bottom: none;
+  position: relative;
+}
+.filter_bar text.active::after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: -1rpx;
+  height: 2rpx;
+  left: 0;
+  right: 0;
+  background-color: white;
+}
+
+/* 仓库 */
+.repoItem {
+  border-bottom: 1rpx rgb(225, 228, 232) solid;
+  padding: 10rpx 20rpx;
+}
+.repoItem .repo_name {
+}
+.repoItem .repo_name .repo_author {
+  color: rgb(3, 102, 214);
+}
+.repoItem .repo_name .repo_name {
+  font-weight: 700;
+  color: rgb(3, 102, 214);
+}
+
+.repoItem .repo_desc {
+  margin-top: 10rpx;
+}
+.repoItem .repo_desc text {
+  font-size: 28rpx;
+  line-height: 36rpx;
+}
+.repoItem .repo_detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.repoItem .repo_detail text {
+  font-size: 24rpx;
+  line-height: 30rpx;
+  margin-right: 10rpx;
+}
+.repoItem .repo_detail image {
+  width: 24rpx;
+  height: 24rpx;
+  margin-right: 5rpx;
+  position: relative;
+  top: 1px;
+}
+
+/* 人员 */
+.deveItem {
+  border-bottom: 1rpx solid rgb(234, 236, 239);
+  padding: 20rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.deve_listNum {
+  flex-shrink: 0;
+  font-size: 30rpx;
+  line-height: 30rpx;
+}
+.deve_avatar {
+  flex-shrink: 0;
+  height: 60rpx;
+  width: 60rpx;
+  margin: 0 20rpx 0 10rpx;
+}
+.deve_info {
+  flex-grow: 1;
+}
+
+.deve_info .username {
+  color: rgb(3, 102, 214);
+}
+.deve_info .name {
+  color: rgb(88, 96, 105);
+  font-weight: 600;
+}
+.deve_info .repoName {
+}
+.deve_info .repoDesc {
+}
+
+/* loading */
+.loading {
+  position: fixed;
+  top: 120rpx;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}

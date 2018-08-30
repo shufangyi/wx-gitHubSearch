@@ -1,5 +1,5 @@
 {
-  "pages": ["pages/rank/index", "pages/search/index", "pages/user/index"],
+  "pages": ["pages/trending/index", "pages/search/index", "pages/user/index"],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
@@ -15,10 +15,10 @@
     "selectedColor": "#1aad19",
     "list": [
       {
-        "text": "rank",
+        "text": "trending",
         "iconPath": "/images/ranking.png",
         "selectedIconPath": "/images/ranking@active.png",
-        "pagePath": "pages/rank/index"
+        "pagePath": "pages/trending/index"
       },
       {
         "text": "search",

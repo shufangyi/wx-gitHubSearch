@@ -33,14 +33,10 @@
     <text class="">{{repoItem.description}}</text>
   </view>
   <view class="repo_topic" wx:if="{{repoItem.repositoryTopics.nodes.length}}">
-    <text class="topic_item" wx:for="{{repoItem.repositoryTopics.nodes}}" wx:key="repoItem.nameWithOwner + item.topic.name">
-      {{item.topic.name}}
-    </text>
+    <text class="topic_item" wx:for="{{repoItem.repositoryTopics.nodes}}" wx:key="repoItem.nameWithOwner + item.topic.name">{{item.topic.name}}</text>
   </view>
   <view class="repo_other_info">
-    <text class="license" wx:if="{{repoItem.licenseInfo.name}}">
-      {{license.formatLicense(repoItem.licenseInfo.name)}}
-    </text>
+    <text class="license" wx:if="{{repoItem.licenseInfo.name}}">{{license.formatLicense(repoItem.licenseInfo.name)}}</text>
     <text class="update_time">{{formatTime.formatTimefun(repoItem.updatedAt)}}</text>
   </view>
 </view>

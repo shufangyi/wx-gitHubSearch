@@ -1,6 +1,7 @@
 {
   "usingComponents": {
     "v-repo": "/components/repoItem/index",
-    "v-header": "/components/head/index"
+    "v-header": "/components/head/index",
+    "v-loading": "/components/loading/index"
   }
 }

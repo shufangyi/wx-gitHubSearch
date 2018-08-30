@@ -2,13 +2,11 @@
 <v-header></v-header>
 <view class="search_container">
   <view class="search_head">
-    <input adjust-position="{{true}}" value="{{query}}" class="query_input {{ input_focus ? 'query_input_focus' : ''}}" confirm-type="search" placeholder="输入关键字搜索" placeholder-class="query_input_placeholder" bindfocus="onFocus" bindblur="onBluer" bindconfirm="onConfirm" bindinput="onInput"/>
-    <image src="/images/search.png" bind:tap="searchByKeyword" class="search_icon"/>
+    <input adjust-position="{{true}}" value="{{query}}" class="query_input {{ input_focus ? 'query_input_focus' : ''}}" confirm-type="search" placeholder="输入关键字搜索" placeholder-class="query_input_placeholder" bindfocus="onFocus" bindblur="onBluer" bindconfirm="onConfirm" bindinput="onInput" />
+    <image src="/images/search.png" bind:tap="searchByKeyword" class="search_icon" />
   </view>
   <view class="main_body">
-    <view wx:if="{{loading && !repoList}}" class="result_loading">
-      <view class="scroll_pixel"></view>
-    </view>
+    <v-loading wx:if="{{loading && !repoList}}"></v-loading>
     <view wx:else class="result_wrapper">
       <v-repo wx:for="{{repoList}}" repoItem="{{item}}" wx:key="{{item.projectsUr}}" class="result_item"></v-repo>
     </view>

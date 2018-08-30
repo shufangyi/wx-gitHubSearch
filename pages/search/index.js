@@ -1,6 +1,6 @@
 // pages/home/index.js
 const { $gql } = require('../../utils/fetch')
-const { serachRepo } = require('../../graphql/searchRepo.gql')
+const { serachRepo } = require('../../api/searchRepo.gql')
 Page({
   /**
    * 页面的初始数据

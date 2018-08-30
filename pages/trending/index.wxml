@@ -1,0 +1,43 @@
+<!-- pages/rank/index.wxml -->
+<view class="filter_bar">
+  <text class="" bindtap="toggleList" data-mode="repo" class="{{type === 'repo' ? 'active' : ''}}">Repositories</text>
+  <text class="" bindtap="toggleList" data-mode="deve" class="{{type === 'deve' ? 'active' : ''}}">Developers</text>
+</view>
+<view wx:if="{{repoList && type === 'repo'}}" wx:for="{{repoList}}" wx:key="{{item.author + item.name}}" class="repoItem">
+  <view class="repo_name">
+    <text class="repo_author">{{item.author}} /</text>
+    <text class="repo_name">{{item.name}}</text>
+  </view>
+  <view class="repo_desc">
+    <text>{{item.description}}</text>
+  </view>
+  <view class="repo_detail">
+    <view>
+      <image src="/images/global.png" wx:if="{{item.language}}" />
+      <text>{{item.language}}</text>
+      <image src="/images/star.png" wx:if="{{item.stars}}" />
+      <text>{{item.stars}}</text>
+      <image src="/images/fork.png" wx:if="{{item.forks}}" />
+      <text>{{item.forks}}</text>
+    </view>
+    <view>
+      <image src="/images/star.png" wx:if="{{item.currentPeriodStars}}" />
+      <text>{{item.currentPeriodStars}} stars today</text>
+    </view>
+  </view>
+</view>
+<view wx:if="{{developersList && type === 'deve'}}" wx:for="{{developersList}}" wx:key="{{item.username}}" class="deveItem">
+  <view class="deve_listNum">{{index + 1}}</view>
+  <image src="{{item.avatar}}" class="deve_avatar" />
+  <view class="deve_info">
+    <text class="username">{{item.username}}</text>
+    <text class="name">({{item.name}})</text>
+    <view>
+      <text class="repoName">{{item.repo.name}} --</text>
+      <text class="repoDesc">{{item.repo.description}}</text>
+    </view>
+  </view>
+</view>
+<view wx:if="{{loading}}" class="loading">
+  <v-loading></v-loading>
+</view>

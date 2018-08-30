@@ -70,6 +70,7 @@ text {
 .repo_name .repo_stars .star_img {
   width: 20rpx;
   height: 20rpx;
+  margin-right: 10rpx;
 }
 
 .repo_name .repo_stars .repo_star_btn {

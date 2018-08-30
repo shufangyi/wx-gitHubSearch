@@ -51,7 +51,7 @@
   margin-top: 214rpx;
 }
 
-.main_body .result_loading {
+/* .main_body .result_loading {
   position: absolute;
   top: 0;
   left: 0;
@@ -64,7 +64,7 @@
 }
 
 .main_body .result_loading .scroll_pixel {
-  background: #1aad19;
+  background: #1aad19;ß
   color: #1aad19;
   width: 20rpx;
   height: 20rpx;
@@ -88,7 +88,7 @@
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 
 .main_body .result_wrapper {
 }
