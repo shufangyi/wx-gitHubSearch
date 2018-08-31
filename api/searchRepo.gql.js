@@ -48,6 +48,13 @@ const query = graphql`
           }
           owner {
             avatarUrl
+            login
+            ... on Organization {
+              teamsResourcePath
+            }
+            ... on User {
+              resourcePath
+            }
           }
         }
       }

@@ -2,7 +2,8 @@
   "pages": [
     "pages/trending/index",
     "pages/search/index",
-    "pages/repoDetail/index"
+    "pages/repoDetail/index",
+    "pages/userDetail/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
