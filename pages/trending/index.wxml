@@ -33,7 +33,7 @@
     <text class="username">{{item.username}}</text>
     <text class="name">({{item.name}})</text>
     <view>
-      <text class="repoName">{{item.repo.name}} --</text>
+      <text class="repoName">{{item.repo.name}} -- </text>
       <text class="repoDesc">{{item.repo.description}}</text>
     </view>
   </view>
