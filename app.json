@@ -1,5 +1,5 @@
 {
-  "pages": ["pages/trending/index", "pages/search/index", "pages/user/index"],
+  "pages": ["pages/trending/index", "pages/search/index"],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
@@ -25,12 +25,6 @@
         "iconPath": "/images/search.png",
         "selectedIconPath": "/images/search@active.png",
         "pagePath": "pages/search/index"
-      },
-      {
-        "text": "user",
-        "iconPath": "/images/user.png",
-        "selectedIconPath": "/images/user@active.png",
-        "pagePath": "pages/user/index"
       }
     ]
   }

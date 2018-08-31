@@ -45,7 +45,15 @@ Page({
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {},
+  onPullDownRefresh: function(event) {
+    if (this.data.type === 'repo') {
+      this.loadRepoList()
+    } else if (this.data.type === 'deve') {
+      this.loadDeveList()
+    } else {
+      wx.stopPullDownRefresh()
+    }
+  },
 
   /**
    * 页面上拉触底事件的处理函数
@@ -58,16 +66,17 @@ Page({
   onShareAppMessage: function() {},
   loadRepoList() {
     this.setData({
-      loading: true
+      loading: true,
+      repoList: null
     })
     trendingAPI
       .listTrendingRepo(this.data.language, this.data.since)
       .then(res => {
-        console.log(res)
         this.setData({
           repoList: res,
           loading: false
         })
+        wx.stopPullDownRefresh()
       })
       .catch(e => {
         console.log(e)
@@ -75,20 +84,22 @@ Page({
           loading: false,
           err: true
         })
+        wx.stopPullDownRefresh()
       })
   },
   loadDeveList() {
     this.setData({
-      loading: true
+      loading: true,
+      developersList: null
     })
     trendingAPI
       .listTrendingDevelopers(this.data.language, this.data.since)
       .then(res => {
-        console.log('==deve==', res)
         this.setData({
           developersList: res,
           loading: false
         })
+        wx.stopPullDownRefresh()
       })
       .catch(e => {
         console.log(e)
@@ -96,10 +107,10 @@ Page({
           loading: false,
           err: true
         })
+        wx.stopPullDownRefresh()
       })
   },
   toggleList(event) {
-    console.log(event)
     const mode = event.target.dataset.mode
     if (mode === this.data.type) {
       return

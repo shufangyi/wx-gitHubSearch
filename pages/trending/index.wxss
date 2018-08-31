@@ -121,7 +121,7 @@ text {
 /* loading */
 .loading {
   position: fixed;
-  top: 120rpx;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;

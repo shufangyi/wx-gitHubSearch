@@ -3,7 +3,8 @@
 */
 
 const { $get } = require('../utils/fetch')
-const BASEURL = 'https://github-trending-api.now.sh'
+const BASEURL = require('../config').TRENDING_BASE
+// 'https://github-trending-api.now.sh'
 
 const listLanguages = function() {
   return $get(`${BASEURL}/languages`)
