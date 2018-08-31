@@ -41,6 +41,6 @@
   </view>
   <view class="repo_other_info">
     <text class="license" wx:if="{{repoItem.licenseInfo.name}}">{{format.formatLicense(repoItem.licenseInfo.name)}}</text>
-    <text class="update_time">{{formatTime.formatTimefun(repoItem.updatedAt)}}</text>
+    <text class="update_time">{{formatTime.formatTimefun(repoItem.pushedAt)}}</text>
   </view>
 </view>

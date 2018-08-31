@@ -23,6 +23,7 @@ const query = graphql`
           url
           createdAt
           updatedAt
+          pushedAt
           description
           forkCount
           stargazers(first: 1) {

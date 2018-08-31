@@ -1,5 +1,9 @@
 {
-  "pages": ["pages/trending/index", "pages/search/index"],
+  "pages": [
+    "pages/trending/index",
+    "pages/search/index",
+    "pages/repoDetail/index"
+  ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTextStyle": "black",
