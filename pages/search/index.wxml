@@ -9,6 +9,10 @@
     <v-loading wx:if="{{loading && !repoList}}"></v-loading>
     <view wx:else class="result_wrapper">
       <v-repo wx:for="{{repoList}}" repoItem="{{item}}" wx:key="{{item.projectsUr}}" class="result_item"></v-repo>
+      <view class="result_nothing" wx:if="{{repoList && !repoList.length}}">
+        <image src="/images/warning.png" />
+        <text>Oops!暂无结果！</text>
+      </view>
     </view>
   </view>
   <view wx:if="{{loadingMore}}" class="loadingTip">

@@ -111,9 +111,16 @@ Page({
     })
   },
   onFocus(event) {
-    this.setData({
-      input_focus: true
-    })
+    if (this.data.repoList && this.data.repoList.length) {
+      this.setData({
+        input_focus: true
+      })
+    } else {
+      this.setData({
+        input_focus: true,
+        repoList: null
+      })
+    }
   },
   onBluer(event) {
     this.setData({
