@@ -35,10 +35,10 @@
       <text class="name">members</text>
       <text class="after tag"></text>
     </view>
-    <view wx:for="{{organizationInfo.members.nodes}}" class="org_member_item" wx:key="{{item.avatarUrl}}">
+    <navigator wx:for="{{organizationInfo.members.nodes}}" class="org_member_item" wx:key="{{item.avatarUrl}}" url="/pages/authDetail/index?login={{item.login}}&type=user">
       <image src="{{item.avatarUrl}}" class="member_avatar" />
       <text class="member_name">{{item.name}}</text>
-    </view>
+    </navigator>
     <view class="org_member_item" wx:if="{{organizationInfo.members.nodes.length === 5}}" style="padding-left:100rpx;">
       <text class="member_name">...</text>
     </view>

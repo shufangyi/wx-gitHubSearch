@@ -26,18 +26,18 @@
     </view>
   </view>
 </view>
-<view wx:if="{{developersList && type === 'deve'}}" wx:for="{{developersList}}" wx:key="{{item.username}}" class="deveItem">
+<navigator wx:if="{{developersList && type === 'deve'}}" wx:for="{{developersList}}" wx:key="{{item.username}}" class="deveItem" url="/pages/authDetail/index?login={{item.username}}&type=user">
   <view class="deve_listNum">{{index + 1}}</view>
   <image src="{{item.avatar}}" class="deve_avatar" />
   <view class="deve_info">
     <text class="username">{{item.username}}</text>
     <text class="name">({{item.name}})</text>
     <view>
-      <text class="repoName">{{item.repo.name}} -- </text>
+      <text class="repoName">{{item.repo.name}} --</text>
       <text class="repoDesc">{{item.repo.description}}</text>
     </view>
   </view>
-</view>
+</navigator>
 <view wx:if="{{loading}}" class="loading">
   <v-loading></v-loading>
 </view>

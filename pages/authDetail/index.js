@@ -15,6 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log(options)
     if (options.login) {
       this.getUserDetail(options.login, options.type)
     } else {
@@ -65,10 +66,15 @@ Page({
         })
       )
         .then(res => {
-          this.setData({
-            userInfo: res,
-            organizationInfo: null
-          })
+          if (!res.data.user) {
+            // 查无此人 尝试查询组织
+            this.getUserDetail(loginName, 'organization')
+          } else {
+            this.setData({
+              userInfo: res.data.user,
+              organizationInfo: null
+            })
+          }
         })
         .catch(e => {
           console.log(e)

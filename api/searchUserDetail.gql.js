@@ -5,6 +5,7 @@ const query = graphql`
     user(login: $login) {
       id
       avatarUrl
+      login
       name
       organizations(first: 3) {
         nodes {
@@ -29,6 +30,15 @@ const query = graphql`
         nodes {
           ... on Repository {
             name
+            description
+            stargazers {
+              totalCount
+            }
+            primaryLanguage{
+              color
+              name
+            }
+            forkCount
           }
         }
       }

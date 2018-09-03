@@ -1,2 +1,53 @@
-<!--pages/authDetail/user/index.wxml-->
-<text>pages/authDetail/user/index.wxml</text>
+<!-- pages/authDetail/user/index.wxml -->
+<wxs src="../../../utils/wxs/formatNum.wxs" module="formatNum" />
+<view class="title">
+  <text>User</text>
+</view>
+<view wx:if="{{userInfo}}" class="user_wrap">
+  <view class="user_info">
+    <image src="{{userInfo.avatarUrl}}" class="user_avatar" />
+    <view class="user_deatail">
+      <view class="user_name">
+        <text>{{userInfo.name}}</text>
+      </view>
+      <view class="user_bio">
+        <text>{{userInfo.bio}}</text>
+      </view>
+      <view class="user_follower">
+        <text>Followers: {{formatNum.formatNumber(userInfo.followers.totalCount)}}</text>
+        <text>Followering: {{userInfo.following.totalCount}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="user_company social_info" wx:if="{{userInfo.company}}">
+    <image src="/images/company.png" class="icon" />
+    <text>{{userInfo.company}}</text>
+  </view>
+  <view class="user_email social_info" wx:if="{{userInfo.email}}">
+    <image src="/images/email.png" class="icon" />
+    <text>{{userInfo.email}}</text>
+  </view>
+  <view class="user_location social_info" wx:if="{{userInfo.location}}">
+    <image src="/images/location.png" class="icon" />
+    <text>{{userInfo.location}}</text>
+  </view>
+  <view class="user_repos">
+    <view class="user_repos_item" wx:for="{{userInfo.repositories.nodes}}" wx:key="item.name">
+      <view class="repo_name">{{item.name}}</view>
+      <view class="repo_desc">{{item.description}}</view>
+      <view class="bottom_desc">
+        <view class="bottom_desc_item" wx:if="{{item.primaryLanguage.name}}">
+          <text class="color_circle" style="background-color: {{item.primaryLanguage.color}}"></text><text>{{item.primaryLanguage.name}}</text>
+        </view>
+        <view class="bottom_desc_item">
+          <image src="/images/star.png" />
+          <text>{{formatNum.formatNumber(item.stargazers.totalCount)}}</text>
+        </view>
+        <view class="bottom_desc_item">
+          <image src="/images/fork.png" />
+          <text>{{formatNum.formatNumber(item.forkCount)}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
