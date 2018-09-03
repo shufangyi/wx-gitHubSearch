@@ -36,6 +36,7 @@ text {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  word-break: break-all;
 }
 
 .repo_name .repo_detail .repo_project_name {
