@@ -3,7 +3,7 @@
     "pages/trending/index",
     "pages/search/index",
     "pages/repoDetail/index",
-    "pages/userDetail/index"
+    "pages/authDetail/index"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",

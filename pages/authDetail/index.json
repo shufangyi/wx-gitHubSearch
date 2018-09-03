@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "v-user": "./user/index",
+    "v-organization": "./organization/index",
+    "v-back": "/components/goBack/index"
+  }
+}

@@ -1,0 +1,8 @@
+<!-- pages/userDetail/index.wxml -->
+<view wx:if="{{userInfo}}">
+  <v-user userInfo="{{userInfo}}"></v-user>
+</view>
+<view wx:elif="{{organizationInfo}}">
+  <v-organization organizationInfo="{{organizationInfo}}"></v-organization>
+</view>
+<v-back></v-back>

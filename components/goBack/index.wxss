@@ -1,0 +1,10 @@
+/* components/goBack/index.wxss */
+.goBack {
+  position: fixed;
+  top: 55rpx;
+  left: 30rpx;
+}
+.goBack image {
+  width: 45rpx;
+  height: 45rpx;
+}

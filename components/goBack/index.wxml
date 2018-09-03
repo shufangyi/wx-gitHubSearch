@@ -1,0 +1,4 @@
+<!-- components/goBack/index.wxml -->
+<view class="goBack">
+  <image src="/images/back.png" bind:tap="goback" />
+</view>

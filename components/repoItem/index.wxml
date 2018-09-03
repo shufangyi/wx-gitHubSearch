@@ -19,7 +19,7 @@
 </wxs>
 <view class="repoItem" wx:if="{{repoItem}}">
   <view class="repo_name">
-    <navigator url="/pages/userDetail/index?login={{repoItem.owner.login}}&type={{repoItem.owner.teamsResourcePath ? 'organization':'user'}}">
+    <navigator url="/pages/authDetail/index?login={{repoItem.owner.login}}&type={{repoItem.owner.teamsResourcePath ? 'organization':'user'}}">
       <image lazy-load="{{true}}" src="{{repoItem.owner.avatarUrl}}" class="repo_avatar" />
     </navigator>
     <view class="repo_detail">

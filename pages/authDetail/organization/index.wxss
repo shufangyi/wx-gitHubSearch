@@ -1,0 +1,85 @@
+/* pages/authDetail/organization/index.wxss */
+text {
+  color: #586069;
+}
+.title {
+  padding-top: 55rpx;
+  text-align: center;
+}
+.org_wrap {
+  padding: 50rpx 30rpx 30rpx 30rpx;
+}
+
+.org_info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.org_avatar image {
+  flex-shrink: 0;
+  width: 200rpx;
+  height: 200rpx;
+}
+.org_detail {
+  flex-grow: 1;
+  margin-left: 30rpx;
+}
+.org_detail image {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 10rpx;
+  user-select: none;
+  position: relative;
+  top: 4rpx;
+}
+
+.org_detail .org_name text {
+  font-weight: 600;
+  color: rgb(3, 102, 214);
+  font-size: 40rpx;
+}
+
+.org_detail link {
+}
+.org_detail text {
+  font-size: 28rpx;
+  line-height: 32rpx;
+}
+
+.org_desc {
+}
+
+.org_members {
+  margin-top: 60rpx;
+}
+.org_members .org_members_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.org_members .org_members_title .tag {
+  width: 60rpx;
+  height: 1px;
+  background-color: #586069;
+}
+
+.org_members .org_members_title .name {
+  margin: 0 30rpx;
+}
+.org_members .org_member_item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 30rpx 20rpx;
+}
+.org_members .org_member_item image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+
+.org_members .org_member_item .member_name {
+  margin-left: 30rpx;
+  font-size: 32rpx;
+}

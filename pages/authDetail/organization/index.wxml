@@ -1,0 +1,46 @@
+<!-- pages/authDetail/organization/index.wxml -->
+<view class="title">
+  <text>Organization</text>
+</view>
+<view wx:if="{{organizationInfo}}" class="org_wrap">
+  <view class="org_info">
+    <view class="org_avatar">
+      <image src="{{organizationInfo.avatarUrl}}" />
+      <view class="{{organizationInfo.isVerified}}"></view>
+    </view>
+    <view class="org_detail">
+      <view class="org_name">
+        <text>{{organizationInfo.name}}</text>
+      </view>
+      <view class="org_email link" wx:if="{{organizationInfo.email}}">
+        <image src="/images/email.png" />
+        <text>{{organizationInfo.email}}</text>
+      </view>
+      <view class="org_website link" wx:if="{{organizationInfo.websiteUrl}}">
+        <image src="/images/global.png" />
+        <text>{{organizationInfo.websiteUrl}}</text>
+      </view>
+      <view class="org_location" wx:if="{{organizationInfo.location}}">
+        <image src="/images/location.png" />
+        <text>{{organizationInfo.location}}</text>
+      </view>
+    </view>
+  </view>
+  <view class="org_desc" wx:if="{{organizationInfo.description}}">
+    <text>{{organizationInfo.description}}</text>
+  </view>
+  <view class="org_members" wx:if="{{organizationInfo.members.nodes.length}}">
+    <view class="org_members_title">
+      <text class="before tag"></text>
+      <text class="name">members</text>
+      <text class="after tag"></text>
+    </view>
+    <view wx:for="{{organizationInfo.members.nodes}}" class="org_member_item" wx:key="{{item.avatarUrl}}">
+      <image src="{{item.avatarUrl}}" class="member_avatar" />
+      <text class="member_name">{{item.name}}</text>
+    </view>
+    <view class="org_member_item" wx:if="{{organizationInfo.members.nodes.length === 5}}" style="padding-left:100rpx;">
+      <text class="member_name">...</text>
+    </view>
+  </view>
+</view>

@@ -10,6 +10,7 @@ const query = graphql`
       description
       email
       location
+      websiteUrl
       members(first: 5) {
         nodes {
           ... on User {

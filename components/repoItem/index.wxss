@@ -27,11 +27,11 @@ text {
   flex-grow: 0;
   width: 80rpx;
   height: 80rpx;
-  margin-right: 40rpx;
   border-radius: 50%;
 }
 
 .repo_name .repo_detail {
+  margin-left: 40rpx;
   flex-grow: 1;
   display: flex;
   flex-direction: column;

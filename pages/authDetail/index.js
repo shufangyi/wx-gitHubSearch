@@ -15,9 +15,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options)
     if (options.login) {
       this.getUserDetail(options.login, options.type)
+    } else {
+      console.log('参数错误')
+      wx.navigateBack()
     }
   },
 
@@ -64,7 +66,8 @@ Page({
       )
         .then(res => {
           this.setData({
-            userInfo: res
+            userInfo: res,
+            organizationInfo: null
           })
         })
         .catch(e => {
@@ -78,7 +81,8 @@ Page({
       )
         .then(res => {
           this.setData({
-            organizationInfo: res
+            organizationInfo: res.data.organization,
+            userInfo: null
           })
         })
         .catch(e => {
