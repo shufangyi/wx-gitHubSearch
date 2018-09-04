@@ -4,7 +4,9 @@
 		var b = !a && src.indexOf('circleci.com') > -1
 		var c = !b && src.indexOf('packagephobia') > -1
 		var d = !c && src.indexOf('codetriage.com') > -1
-		return  a || b || c || d ? 'wemark_inline_image_tagImg' : 'wemark_inline_image'
+		var e = !d && src.indexOf('travis-ci.com') > -1
+		var f = !e && src.indexOf('snyk.io') > -1
+		return  a || b || c || d || e || f ? 'wemark_inline_image_tagImg' : 'wemark_inline_image'
 	}
 	module.exports.filterImg = filterImgf
 </wxs>
