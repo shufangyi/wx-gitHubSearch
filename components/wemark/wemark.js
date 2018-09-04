@@ -88,7 +88,7 @@ Component({
         }
       } else {
         const width = windowWidth - 20
-        const height = $width / ratio
+        const height = width / ratio
         images[e.target.dataset.src] = {
           height: height + 'px',
           width: width + 'px'
