@@ -2,6 +2,7 @@
   "usingComponents": {
     "v-user": "./user/index",
     "v-organization": "./organization/index",
-    "v-back": "/components/goBack/index"
+    "v-back": "/components/goBack/index",
+    "v-loading": "/components/loading/index"
   }
 }

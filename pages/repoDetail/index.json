@@ -1,1 +1,7 @@
-{}
+{
+  "usingComponents": {
+    "v-back": "/components/goBack/index",
+    "v-wemark": "/components/wemark/wemark",
+    "v-loading": "/components/loading/index"
+  }
+}

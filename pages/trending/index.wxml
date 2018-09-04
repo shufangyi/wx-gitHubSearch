@@ -3,7 +3,7 @@
   <text class="" bindtap="toggleList" data-mode="repo" class="{{type === 'repo' ? 'active' : ''}}">Repositories</text>
   <text class="" bindtap="toggleList" data-mode="deve" class="{{type === 'deve' ? 'active' : ''}}">Developers</text>
 </view>
-<view wx:if="{{repoList && type === 'repo'}}" wx:for="{{repoList}}" wx:key="{{item.author + item.name}}" class="repoItem">
+<navigator wx:if="{{repoList && type === 'repo'}}" wx:for="{{repoList}}" wx:key="{{item.author + item.name}}" class="repoItem" url="/pages/repoDetail/index?owner={{item.author}}&repoName={{item.name}}">
   <view class="repo_name">
     <text class="repo_author">{{item.author}} /</text>
     <text class="repo_name">{{item.name}}</text>
@@ -25,7 +25,7 @@
       <text>{{item.currentPeriodStars}} stars today</text>
     </view>
   </view>
-</view>
+</navigator>
 <navigator wx:if="{{developersList && type === 'deve'}}" wx:for="{{developersList}}" wx:key="{{item.username}}" class="deveItem" url="/pages/authDetail/index?login={{item.username}}&type=user">
   <view class="deve_listNum">{{index + 1}}</view>
   <image src="{{item.avatar}}" class="deve_avatar" />

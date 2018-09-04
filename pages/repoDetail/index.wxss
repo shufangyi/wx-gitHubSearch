@@ -1,1 +1,17 @@
 /* pages/repoDetail/index.wxss */
+text {
+  color: #586069;
+}
+.title {
+  padding-top: 55rpx;
+  text-align: center;
+}
+.no_readme {
+  text-align: center;
+  padding-top: 200rpx;
+}
+.no_readme text {
+  font-size: 36rpx;
+  line-height: 50rpx;
+  color: #586069;
+}

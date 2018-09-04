@@ -1,2 +1,10 @@
-<!--pages/repoDetail/index.wxml-->
-<text>pages/repoDetail/index.wxml</text>
+<!-- pages/repoDetail/index.wxml -->
+<view class="title">
+  <text>README</text>
+</view>
+<v-wemark md="{{repoInfo.object.text}}" wx:if="{{repoInfo.object}}"></v-wemark>
+<view wx:elif="{{!loading}}" class="no_readme">
+  <text>Oops! No README...</text>
+</view>
+<v-back></v-back>
+<v-loading wx:if="{{loading}}"></v-loading>

@@ -34,6 +34,11 @@ const query = graphql`
       owner {
         avatarUrl
       }
+      object(expression: "master:README.md") {
+        ... on Blob {
+          text
+        }
+      }
     }
   }
 `

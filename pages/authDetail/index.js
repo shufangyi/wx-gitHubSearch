@@ -8,14 +8,14 @@ Page({
    */
   data: {
     userInfo: null,
-    organizationInfo: null
+    organizationInfo: null,
+    loading: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(options)
     if (options.login) {
       this.getUserDetail(options.login, options.type)
     } else {
@@ -59,6 +59,9 @@ Page({
    */
   onShareAppMessage: function() {},
   getUserDetail(loginName, type) {
+    this.setData({
+      loading: true
+    })
     if (type === 'user') {
       $gql(
         serachUserDetail({
@@ -72,12 +75,18 @@ Page({
           } else {
             this.setData({
               userInfo: res.data.user,
-              organizationInfo: null
+              organizationInfo: null,
+              loading: false
             })
           }
         })
         .catch(e => {
           console.log(e)
+          this.setData({
+            userInfo: null,
+            organizationInfo: null,
+            loading: false
+          })
         })
     } else if (type === 'organization') {
       $gql(
@@ -88,11 +97,17 @@ Page({
         .then(res => {
           this.setData({
             organizationInfo: res.data.organization,
-            userInfo: null
+            userInfo: null,
+            loading: false
           })
         })
         .catch(e => {
           console.log(e)
+          this.setData({
+            userInfo: null,
+            organizationInfo: null,
+            loading: false
+          })
         })
     }
   }

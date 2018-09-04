@@ -6,3 +6,4 @@
   <v-organization organizationInfo="{{organizationInfo}}"></v-organization>
 </view>
 <v-back></v-back>
+<v-loading wx:if="{{loading}}"></v-loading>

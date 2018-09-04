@@ -32,7 +32,7 @@
     <text>{{userInfo.location}}</text>
   </view>
   <view class="user_repos">
-    <view class="user_repos_item" wx:for="{{userInfo.repositories.nodes}}" wx:key="item.name">
+    <navigator class="user_repos_item" wx:for="{{userInfo.repositories.nodes}}" wx:key="item.name" url="/pages/repoDetail/index?owner={{userInfo.login}}&repoName={{item.name}}">
       <view class="repo_name">{{item.name}}</view>
       <view class="repo_desc">{{item.description}}</view>
       <view class="bottom_desc">
@@ -48,6 +48,6 @@
           <text>{{formatNum.formatNumber(item.forkCount)}}</text>
         </view>
       </view>
-    </view>
+    </navigator>
   </view>
 </view>
