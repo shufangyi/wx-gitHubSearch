@@ -1,12 +1,12 @@
 <wxs module="funs">
 	var filterImgf = function(src) {
 		var a = src.indexOf('img.shields.io') > -1
-		var b = !a && src.indexOf('circleci.com') > -1
-		var c = !b && src.indexOf('packagephobia') > -1
-		var d = !c && src.indexOf('codetriage.com') > -1
-		var e = !d && src.indexOf('travis-ci.com') > -1
-		var f = !e && src.indexOf('snyk.io') > -1
-		return  a || b || c || d || e || f ? 'wemark_inline_image_tagImg' : 'wemark_inline_image'
+		|| src.indexOf('circleci.com') > -1
+		|| src.indexOf('packagephobia') > -1
+		|| src.indexOf('codetriage.com') > -1
+		|| src.indexOf('travis-ci.com') > -1
+		|| src.indexOf('snyk.io') > -1
+		return  a ? 'wemark_inline_image_tagImg' : 'wemark_inline_image'
 	}
 	module.exports.filterImg = filterImgf
 </wxs>
