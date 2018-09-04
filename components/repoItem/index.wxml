@@ -22,13 +22,13 @@
     <navigator url="/pages/authDetail/index?login={{repoItem.owner.login}}&type={{repoItem.owner.teamsResourcePath ? 'organization':'user'}}">
       <image lazy-load="{{true}}" src="{{repoItem.owner.avatarUrl}}" class="repo_avatar" />
     </navigator>
-    <view class="repo_detail">
+    <navigator class="repo_detail" url="/pages/repoDetail/index?owner={{repoItem.owner.login}}&repoName={{repoItem.name}}">
       <text class="repo_project_name">{{format.reponame(repoItem.nameWithOwner)}} / {{repoItem.name}}</text>
       <view>
         <text class="circle_label inlineBlock" style="background-color:{{repoItem.primaryLanguage.color}}"></text>
         <text class="repo_mainLag">{{repoItem.primaryLanguage.name}}</text>
       </view>
-    </view>
+    </navigator>
     <view class="repo_stars">
       <image src="/images/star.png" class="star_img inlineBlock" />
       <text class="inlineBlock">{{ formatNum.formatNumber(repoItem.stargazers.totalCount) }}</text>
