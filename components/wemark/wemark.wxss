@@ -126,7 +126,8 @@
   height: auto;
 }
 .wemark_inline_image_tagImg {
-  /* width: 180rpx; */
+  width: 180rpx;
+  height: 40rpx;
   margin-right: 20rpx;
 }
 .wemark_inline_code {
