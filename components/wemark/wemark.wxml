@@ -1,7 +1,10 @@
 <wxs module="funs">
 	var filterImgf = function(src) {
-		console.log(src)
-		return src.indexOf('img.shields.io') > -1 ? 'wemark_inline_image_tagImg' : 'wemark_inline_image'
+		var a = src.indexOf('img.shields.io') > -1
+		var b = !a && src.indexOf('circleci.com') > -1
+		var c = !b && src.indexOf('packagephobia') > -1
+		var d = !c && src.indexOf('codetriage.com') > -1
+		return  a || b || c || d ? 'wemark_inline_image_tagImg' : 'wemark_inline_image'
 	}
 	module.exports.filterImg = filterImgf
 </wxs>
@@ -14,7 +17,7 @@
 			<text class="wemark_inline_code_{{renderInline.type}}" wx:if="{{renderInline.type&&renderBlock.highlight}}">{{renderInline.content}}</text>
 			<text class="wemark_inline_code_text" wx:if="{{!renderInline.type}}">{{renderInline}}</text>
 			<navigator class="wemark_inline_link" url="{{renderInline.data.href}}" wx:if="{{renderInline.type === 'link'}}">{{renderInline.content}}</navigator>
-			<image mode="widthFix" class="{{funs.filterImg(renderInline.src)}}" src="{{renderInline.src}}" wx:if="{{renderInline.type === 'image'}}"></image>
+			<image class="{{funs.filterImg(renderInline.src)}}" src="{{renderInline.src}}" wx:if="{{renderInline.type === 'image'}}" bindload="imageLoad" data-shrink="{{funs.filterImg(renderInline.src)}}" data-src="{{renderInline.src}}" style="width: {{images[renderInline.src].width}};height: {{images[renderInline.src].height}}"></image>
 		</block>
 		<block wx:if="{{!renderBlock.isArray}}">
 			<view wx:if="{{renderBlock.type === 'code'}}">{{renderBlock.content}}</view>
